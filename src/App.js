@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { HamburguesaMenu } from './componets/HamburguesaMenu';
+import Tarjetas from './componets/Tarjetas';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+     
+      <header className = "navbar">
+        <div className = "Logo"> 
+          <h2>Somnia</h2>
+        </div>
+        
+        <HamburguesaMenu/>
+
       </header>
-    </div>
+      
+
+      <main>
+        <div className = "fondoMain"> </div>
+
+        <section className = "cajaDeCajas">
+          <Tarjetas tipo={1}/>
+          <Tarjetas tipo={2}/>
+          <Tarjetas tipo={3}/>
+          <Tarjetas tipo={4}/>
+          <Tarjetas tipo={5}/>
+        </section>
+      </main>
+    </>
+
   );
 }
 
