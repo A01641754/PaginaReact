@@ -5,23 +5,28 @@ function Tarjetas({ tipo }) {
   const configuraciones = {
     1: {
       titulo: "Ir a Somnia",
-      imagen: "imagenes/inicio.jpg"
+      imagenB: "imagenes/inicio.jpg",
+      imagenH: "imagenes/bolillo.png"
     },
     2: {
       titulo: "Descubre más de Somnia",
-      imagen: "/imagenes/descubre.jpg"
+      imagenB: "/imagenes/descubre.jpg",
+      imagenH: "imagenes/bolillo.png"
     },
     3: {
       titulo: "Islas",
-      imagen: "/imagenes/islas.png"
+      imagenB: "/imagenes/islas.png",
+      imagenH: "imagenes/bolillo.png"
     },
     4: {
       titulo: "Personajes",
-      imagen: "/imagenes/personajes.png"
+      imagenB: "/imagenes/personajes.png",
+      imagenH: "imagenes/bolillo.png"
     },
     5: {
       titulo: "Creadores",
-      imagen: "/imagenes/creadores.png"
+      imagenB: "/imagenes/creadores.png",
+      imagenH: "imagenes/bolillo.png"
     }
   };
 
@@ -34,14 +39,23 @@ function Tarjetas({ tipo }) {
   }
 
   return (
-    <div
+    <section
       className="tarjeta"
-      style={{ backgroundImage: `url(${config.imagen})`}}
+      
     >
+      <div className = "tarjetaBase"
+      style={{ backgroundImage: `url(${config.imagen})`}}>
+      </div>
+
+      <div className = "tarjetaHover"></div>
+      <div> className = ""</div>
+
+      
+
       <div className="textoTJ">
         <h2>{config.titulo}</h2>
       </div>
-    </div>
+    </section>
   );
 }
 

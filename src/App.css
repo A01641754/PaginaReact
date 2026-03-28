@@ -1,3 +1,7 @@
+html, body {
+  margin: 0;
+}
+
 @font-face {
   font-family: 'gahiboe';
   src: url('/src/tipografias_somnia/GAHIBOE\ Regular.ttf ') format('opentype');
@@ -52,29 +56,111 @@
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
-.navbar{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 0 2%;
-
+.header.falso{
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  height: 50px;
 
-  background: rgba(10, 10, 15, 0.25);
+  background: rgba(10, 10, 15, 0.226);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   z-index: 1000;
+  
+}
+
+
+
+.abrir-menu, .cerrar-menu {
+  display: block;
+}
+
+
+.navbar{
+  /*Inicialmente el menu no se ve, hasta que apliquemos el .nav.visible*/
+  opacity: 0;
+  visibility: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 0.5rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(46, 45, 41);
+  height: 100vh;
+  padding: 2rem;
+  z-index: 5000;
+
+  /*Esto es para que lo de atras del menu se vea oscurecido*/
+  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5)
 
 }
+.navbar.visible{
+  opacity: 1;
+  visibility: visible;
+
+}
+
+.nav-list{
+  display:flex;
+  list-style-type: none;
+  flex-direction: column;
+  align-items: end;
+  gap: 1rem;
+}
+
+
+
+
 .Logo {
   font-family: 'gahiboe';
-  text-decoration: none;
   color: white;
+  font-size: 3rem;
+
+}
+
+.linkFake{
+  font-family: 'Fontlero';
+  font-size: 1.4rem;
+  color: white;
+}
+
+.abrir-menu, .cerrar-menu {
+  display: block;
+  border: 0;
   font-size: 2.5rem;
-  font-weight: bold;
-  top: 0px;
+  background-color: transparent;
+  cursor: pointer;
+  
+  color: rgb(255, 255, 255)
+
+}
+
+
+
+
+@media screen and (min-width: 900px) {
+
+  .abrir-menu,.cerrar-menu{
+    display: none;
+  }
+
+
+  .header.falso{
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  height: 70px;
+
+  background: rgba(10, 10, 15, 0.226);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 1000;
+  
 }
 
 
@@ -82,4 +168,19 @@
 
 
 
-/*-----------------------*/
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+

@@ -1,24 +1,19 @@
-
+import { Link } from "react-router-dom";
 import './App.css';
-import { HamburguesaMenu } from './componets/HamburguesaMenu';
+/*Este es para importar los iconos */
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import Tarjetas from './componets/Tarjetas';
+import HamburguesaMenu from "./componets/HamburguesaMenu";
 
 function App() {
   return (
     <>
-     
-      <header className = "navbar">
-        <div className = "Logo"> 
-          <h2>Somnia</h2>
-        </div>
         
-        <HamburguesaMenu/>
-
-      </header>
-      
 
       <main>
-        <div className = "fondoMain"> </div>
+        <div className = "fondoMain"> 
+          <HamburguesaMenu /> 
+          </div>
 
         <section className = "cajaDeCajas">
           <Tarjetas tipo={1}/>
