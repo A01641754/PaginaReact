@@ -39,8 +39,21 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  /*Esto es para quitar el subyaddo que viene con el Link*/
+  text-decoration: none;
  
 }
+
+.tarjetaBase{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background-size: cover;
+  background-position: center;
+}
+
 
 .textoTJ{
   /*Posicionamiento de texto*/
@@ -57,11 +70,17 @@ html, body {
 }
 
 .header.falso{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
-  height: 50px;
+  padding: 0rem 0.7rem;
+  box-sizing: border-box;
+  height: 85px;
+  
 
   background: rgba(10, 10, 15, 0.226);
   backdrop-filter: blur(6px);
@@ -69,13 +88,6 @@ html, body {
   z-index: 1000;
   
 }
-
-
-
-.abrir-menu, .cerrar-menu {
-  display: block;
-}
-
 
 .navbar{
   /*Inicialmente el menu no se ve, hasta que apliquemos el .nav.visible*/
@@ -105,28 +117,33 @@ html, body {
 
 }
 
+
+
 .nav-list{
   display:flex;
   list-style-type: none;
   flex-direction: column;
   align-items: end;
-  gap: 1rem;
+  gap: 2rem;
 }
 
-
+ .nav-listPC{
+    display:none;
+}
 
 
 .Logo {
   font-family: 'gahiboe';
   color: white;
-  font-size: 3rem;
+  font-size: 3.7rem;
 
 }
 
-.linkFake{
+.linktrue{
   font-family: 'Fontlero';
   font-size: 1.4rem;
   color: white;
+  text-decoration: none;
 }
 
 .abrir-menu, .cerrar-menu {
@@ -149,32 +166,123 @@ html, body {
     display: none;
   }
 
+  .tarjeta{
+  min-height: 230px;
+  }
+
+  .textoTJ{
+  /*Modifico tamano de texto en PC*/
+  font-size: 2rem;
+  }
 
   .header.falso{
-  display: flex;
-  align-items: center;
-  padding: 1rem;
-  height: 70px;
+    height: 100px;
+    justify-content:left;
 
-  background: rgba(10, 10, 15, 0.226);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  z-index: 1000;
-  
+  }
+
+  .nav-list{
+    display:none;
+  }
+
+  .nav-listPC{
+    display: flex;
+    list-style-type: none;
+    flex-direction:row;
+    align-items:center;
+    gap: 2rem;
+    
+
+  }
+
+
+
+
+.tarjetaBase{
+  background-repeat: no-repeat;
+
+  transform: scale(1);
+  transition: transform 0.45s ease, filter 0.35s ease;
+  }
+
+.tarjetaHover{
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+
+  background-size: contain;
+  background-position: 85% bottom;
+  background-repeat: no-repeat;
+
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+
+.tarjetaEfectos{
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+
+  background: rgba(0, 0, 0, 0.18);
+  transition: background 0.35s ease;
+  }
+
+/* borde blanco interno */
+.tarjeta::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+
+  border: 5px solid rgba(255, 255, 255, 0);
+  opacity: 0;
+  transition: opacity 0.3s ease, border-color 0.3s ease;
+  }
+
+/* texto arriba de todo */
+.textoTJ{
+  position: relative;
+  z-index: 4;
+  text-align: center;
+  padding: 0;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  }
+
+/* ================= HOVER ================= */
+
+.tarjeta:hover .tarjetaBase{
+  transform: scale(1.08);
+  filter: brightness(1.08) saturate(1.08);
+  }
+
+.tarjeta:hover .tarjetaHover{
+  opacity: 1;
+  transform: translateY(0);
+  }
+
+.tarjeta:hover .tarjetaEfectos{
+  background: rgba(0, 0, 0, 0.08);
+  }
+
+.tarjeta:hover::after{
+  opacity: 1;
+  border-color: rgba(255, 255, 255, 0.95);
+  }
+
+.tarjeta:hover .textoTJ{
+  transform: scale(1.03);
+  text-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+  }
+
 }
+/*----------------------------------------------------*/
 
 
 
-
-
-
-
-
-
-
-
-
-}
 
 
 
