@@ -1,14 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Tarjetas({ tipo }) {
+function Tarjetas({ tipo, abrirLogin }) {
 
   const configuraciones = {
     1: {
       titulo: "Ir a Somnia",
       imagenB: "/imagenes/inicio.jpg",
       imagenH: "/imagenes/bolillo.png",
-      link: "/login"
     },
     2: {
       titulo: "Descubre más de Somnia",
@@ -44,18 +43,43 @@ function Tarjetas({ tipo }) {
     config = configuraciones[1];
   }
 
-  return (
-    <Link to = {config.link} className="tarjeta">
-    
-      <div className = "tarjetaBase"
-      style={{ backgroundImage: `url(${config.imagenB})`}}>
-        
+ //Este es para que la tarjeta Ir a somnia mande a llamar a login
+  if (tipo === 1) {
+    return (
+      <div className="tarjeta" onClick={abrirLogin}>
+        <div
+          className="tarjetaBase"
+          style={{ backgroundImage: `url(${config.imagenB})` }}
+        ></div>
+
+        <div
+          className="tarjetaHover"
+          style={{ backgroundImage: `url(${config.imagenH})` }}
+        ></div>
+
+        <div className="tarjetaEfectos"></div>
+
+        <div className="textoTJ">
+          <h2>{config.titulo}</h2>
+        </div>
       </div>
+    );
+  }
 
-      <div className = "tarjetaHover"
-      style={{ backgroundImage: `url(${config.imagenH})`}}> </div>
+  
+  return (
+    <Link to={config.link} className="tarjeta">
+      <div
+        className="tarjetaBase"
+        style={{ backgroundImage: `url(${config.imagenB})` }}
+      ></div>
 
-      <div className = "tarjetaEfectos"> </div>
+      <div
+        className="tarjetaHover"
+        style={{ backgroundImage: `url(${config.imagenH})` }}
+      ></div>
+
+      <div className="tarjetaEfectos"></div>
 
       <div className="textoTJ">
         <h2>{config.titulo}</h2>

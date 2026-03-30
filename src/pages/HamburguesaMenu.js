@@ -5,6 +5,7 @@ import Login from "../components/Login";
 import Registro1 from "../components/Registro1";
 import Registro2 from "../components/Registro2"
 import Olvidado from "../components/Olvidado"
+import ReestablecerC from "../components/ReestablecerC"
 
 function HamburguesaMenu() {
   const [menuAbierto, setMenuAbierto] = useState(false);
@@ -26,6 +27,10 @@ function HamburguesaMenu() {
   const abrirOlvidado = () => {
     setModalAbierto("olvidado");
   };
+
+  const abrirReestablecerC = () => {
+    setModalAbierto("reestablecerC")
+  }
 
   const cerrarModal = () => {
     setModalAbierto("");
@@ -87,13 +92,25 @@ function HamburguesaMenu() {
 
       {modalAbierto === "olvidado" && (
         <Olvidado
-          cerrarRegistro={cerrarModal}
+          cerrarOlvidado={cerrarModal}
           abrirLogin={abrirLogin}
           abrirRegistro={abrirRegistro}
+          abrirReestablecerC = {abrirReestablecerC}
         />
       )}
 
-      <Outlet />
+      {modalAbierto === "reestablecerC" && (
+        <ReestablecerC
+          cerrarModal={cerrarModal}
+          abrirLogin={abrirLogin}
+        />
+      )}
+
+      {/*Este outlet inicialmente era solo para mostrar las demas paginas pero ahora tamb lo use para pasar */}
+      {/*el modal al Home.js para que este se lo pase a tarjetas y así poder cargar el modal con la tarjeta Ir a Somina*/}
+      {/*son las 3 de la mañana, posiblemente esto no tenga tanto sentido pero es lo unico que se em ocurrio*/}
+
+      <Outlet context={{ abrirLogin }} />
     </>
   );
 }

@@ -1,6 +1,5 @@
+function Olvidado({ cerrarModal, abrirRegistro, abrirLogin, abrirReestablecerC }) {
 
-
-function OlvidePassword({ cerrarModal, abrirRegistro, abrirLogin }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -9,10 +8,7 @@ function OlvidePassword({ cerrarModal, abrirRegistro, abrirLogin }) {
       return;
     }
 
-    const form = new FormData(e.target);
-    const dato = form.get("usuario");
-
-    console.log("Enviar código a:", dato);
+    abrirReestablecerC();
   };
 
   return (
@@ -65,4 +61,4 @@ function OlvidePassword({ cerrarModal, abrirRegistro, abrirLogin }) {
   );
 }
 
-export default OlvidePassword;
+export default Olvidado;
