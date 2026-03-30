@@ -11,6 +11,12 @@ html, body {
   src: url('/src/tipografias_somnia/FONTLERO.TTF') format('opentype');
 }
 
+@font-face {
+  font-family: 'Leorio';
+  src: url('/src/tipografias_somnia/Leorio.ttf') format('opentype');
+}
+
+
 .fondoMain {
   min-height: 100vh;
   overflow: hidden;
@@ -64,7 +70,7 @@ html, body {
 
   /*Estilo de texto*/
   font-family: 'Fontlero';
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   color: white;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
@@ -89,6 +95,18 @@ html, body {
   
 }
 
+/*Este header falso1 es para que en las otras paginas no se pongan las letras detras de la navbar*/
+.header.falso1{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  height: 85px;
+  z-index: 900;
+  
+}
+
 .navbar{
   /*Inicialmente el menu no se ve, hasta que apliquemos el .nav.visible*/
   opacity: 0;
@@ -104,6 +122,7 @@ html, body {
   bottom: 0;
   background-color: rgb(46, 45, 41);
   height: 100vh;
+  width: 60%;
   padding: 2rem;
   z-index: 5000;
 
@@ -136,12 +155,15 @@ html, body {
   font-family: 'gahiboe';
   color: white;
   font-size: 3.7rem;
+  text-decoration:none;
+
+  
 
 }
 
 .linktrue{
   font-family: 'Fontlero';
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   color: white;
   text-decoration: none;
 }
@@ -157,10 +179,205 @@ html, body {
 
 }
 
+/*------------------------------------------------------------------*/
+/*Esta parte es enteramente para el Login en moviles*/
+/* Base recomendable */
 
 
+/* Overlay */
+.login-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Modal */
+.login-modal {
+  position: relative;
+  width: 100%;
+  max-width: 40rem; /* limita en pantallas grandes */
+  min-height: 60vh;
+  background: #ffffff;
+  border-radius: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 1rem 1.5rem;
+  box-sizing: border-box;
+  gap: 0.75rem;
+}
+
+/* Botón cerrar */
+.login-cerrar {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: none;
+  background: transparent;
+  font-size: 3rem;
+  cursor: pointer;
+  color: #555;
+}
+
+.login-cerrar:hover {
+  color: #000;
+}
+
+/* Título */
+.login-titulo {
+  font-family: Fontlero;
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #222;
+}
+
+/* Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Inputs */
+.login-input {
+  font-family: Leorio;
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.9rem 1rem;
+  border: 0.0625rem solid #d9d9d9;
+  border-radius: 0.6rem;
+  font-size: 1.1rem;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.login-input:focus {
+  border-color: #8fa8ff;
+  box-shadow: 0 0 0 0.125rem rgba(143, 168, 255, 0.2);
+}
+
+
+.login-boton {
+  font-family: Fontlero;
+  width: 100%;
+  min-height: 3rem;
+  border: none;
+  border-radius: 0.6rem;
+  background: #cfd8ff;
+  color: #3a4a8a;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.login-boton:hover {
+  background: #bcc9ff;
+}
+
+/* Links */
+.login-links {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.login-link {
+  font-family: Fontlero;
+  border: none;
+  background: none;
+  color: #6c7bc0;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+/* Boton de Jugar */
+.linktrueLogin {
+  font-family: 'Fontlero';
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.login-error {
+  color: rgba(220, 60, 60, 1);
+  font-size: 0.85rem;
+  margin-top: -0.5rem;
+}
+
+.input-error {
+  border-color: rgba(220, 60, 60, 1);
+}
+
+
+/*Esta seccion es para el estilo de la cajita del registro que pregunta si es usuario de NIDE*/
+
+.registro-switch-container {
+  width: 100%;
+  min-height: 3rem;
+  padding: 12px 14px;
+  border: 1px solid rgba(217, 217, 217, 1);
+  border-radius: 10px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.registro-switch-texto {
+  font-size: 0.95rem;
+  color: rgba(120, 120, 120, 1);
+}
+
+.registro-switch-input {
+  display: none;
+}
+
+.registro-switch-slider {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(190, 190, 190, 1);
+  transition: 0.2s ease;
+  flex-shrink: 0;
+}
+
+/* cuando está activado */
+.registro-switch-input:checked + .registro-switch-slider {
+  background: rgba(109, 89, 89, 1);
+}
+
+
+/**/
+
+
+/*---------------------------------------------------------------------------*/
 
 @media screen and (min-width: 900px) {
+  /*Estas modificaciones son para la versión de pc, son clases pasadas*/
 
   .abrir-menu,.cerrar-menu{
     display: none;
@@ -194,9 +411,24 @@ html, body {
     
 
   }
+  .linktrue{
+    font-size: 2rem;
+  }
+  
+
+      
+  
+
+/*LOGIN VERSION PC*/
+
+.login-modal{
+  padding: 1.2rem 2rem 2rem;
+}
 
 
 
+/*-------------------------------------------------------*/
+/*Clases nuevas de la versión de PC*/
 
 .tarjetaBase{
   background-repeat: no-repeat;
@@ -245,6 +477,7 @@ html, body {
 
 /* texto arriba de todo */
 .textoTJ{
+  font-family: Fontlero;
   position: relative;
   z-index: 4;
   text-align: center;
@@ -280,6 +513,8 @@ html, body {
 
 }
 /*----------------------------------------------------*/
+
+/*Lo que sigue es de la pagina */
 
 
 
