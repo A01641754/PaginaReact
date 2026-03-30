@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { Outlet, Link } from "react-router-dom";
-import Navlinks from "../components/Navlinks";
-import Login from "../components/Login";
-import Registro1 from "../components/Registro1";
-import Registro2 from "../components/Registro2"
-import Olvidado from "../components/Olvidado"
-import ReestablecerC from "../components/ReestablecerC"
+import Navlinks from "./Navlinks";
+import Login from "./Login";
+import Registro1 from "./Registro1";
+import Registro2 from "./Registro2"
+import Olvidado from "./Olvidado"
+import ReestablecerC from "./ReestablecerC"
+import LoginAdmin from "./LoginAdmin"
+import RegistroAdmin1 from "./RegistroAdmin1"
+import RegistroAdmin2 from "./RegistroAdmin2"
 
 function HamburguesaMenu() {
   const [menuAbierto, setMenuAbierto] = useState(false);
@@ -32,9 +35,24 @@ function HamburguesaMenu() {
     setModalAbierto("reestablecerC")
   }
 
+  const abrirAdmin = () => {
+    setModalAbierto("loginAdmin");
+  };
+
+  const abrirRegistroA1 = () => {
+    setModalAbierto("registroA1")
+  }
+
+  const abrirRegistroA2 = () => {
+    setModalAbierto("registroA2")
+  }
+
+
+
   const cerrarModal = () => {
     setModalAbierto("");
   };
+
 
   return (
     <>
@@ -69,15 +87,16 @@ function HamburguesaMenu() {
 
       {modalAbierto === "login" && (
         <Login
-          cerrarLogin={cerrarModal}
+          cerrarModal={cerrarModal}
           abrirRegistro={abrirRegistro}
           abrirOlvidado={abrirOlvidado}
+          abrirAdmin={abrirAdmin}
         />
       )}
 
       {modalAbierto === "registro" && (
         <Registro1
-          cerrarRegistro={cerrarModal}
+          cerrarModal={cerrarModal}
           abrirLogin={abrirLogin}
           abrirRegistro2={abrirRegistro2}
         />
@@ -92,7 +111,7 @@ function HamburguesaMenu() {
 
       {modalAbierto === "olvidado" && (
         <Olvidado
-          cerrarOlvidado={cerrarModal}
+          cerrarModal={cerrarModal}
           abrirLogin={abrirLogin}
           abrirRegistro={abrirRegistro}
           abrirReestablecerC = {abrirReestablecerC}
@@ -106,11 +125,37 @@ function HamburguesaMenu() {
         />
       )}
 
+      {modalAbierto === "loginAdmin" && (
+        <LoginAdmin
+          cerrarModal={cerrarModal}
+          abrirLogin={abrirLogin}
+          abrirOlvidado={abrirOlvidado}
+          
+        />
+      )}
+
+      {modalAbierto === "registroA1" && (
+        <RegistroAdmin1
+          cerrarModal={cerrarModal}
+          abrirRegistroA2={abrirRegistroA2}
+          
+        />
+      )}
+
+      {modalAbierto === "registroA2" && (
+        <RegistroAdmin2
+          cerrarModal={cerrarModal}
+          
+        />
+      )}
+
+
+
       {/*Este outlet inicialmente era solo para mostrar las demas paginas pero ahora tamb lo use para pasar */}
       {/*el modal al Home.js para que este se lo pase a tarjetas y así poder cargar el modal con la tarjeta Ir a Somina*/}
-      {/*son las 3 de la mañana, posiblemente esto no tenga tanto sentido pero es lo unico que se em ocurrio*/}
+      {/*son las 3 de la mañana, posiblemente esto no tenga tanto sentido pero es lo unico que se em ocurrio (Ahora tamb voy a mandar registro para que lo abra*/}
 
-      <Outlet context={{ abrirLogin }} />
+      <Outlet context={{ abrirLogin, abrirRegistroA1 }} />
     </>
   );
 }

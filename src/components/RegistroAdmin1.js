@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Registro1({ cerrarModal, abrirLogin, abrirRegistro2 }) {
+function RegistroAdmin1({ cerrarModal, abrirRegistroA2 }) {
   const [formData, setFormData] = useState({
     email: "",
     username: "",
@@ -45,7 +45,6 @@ function Registro1({ cerrarModal, abrirLogin, abrirRegistro2 }) {
     if (!formData.confirmPassword.trim()) {
       nuevosErrores.confirmPassword = "Debes confirmar la contraseña";
     } 
-    
     else if (formData.confirmPassword !== formData.password) {
       nuevosErrores.confirmPassword = "Las contraseñas no coinciden";
     }
@@ -54,14 +53,20 @@ function Registro1({ cerrarModal, abrirLogin, abrirRegistro2 }) {
     return Object.keys(nuevosErrores).length === 0;
   };
 
+
+
+  
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (validar()) {
-      console.log("Datos de Registro1 válidos:", formData);
-      abrirRegistro2();
+      console.log("Datos de administrador válidos:", formData);
+      abrirRegistroA2();
     }
   };
+
+
+
 
   return (
     <div className="login-overlay">
@@ -70,7 +75,7 @@ function Registro1({ cerrarModal, abrirLogin, abrirRegistro2 }) {
           <i className="bi bi-x"></i>
         </button>
 
-        <h2 className="login-titulo">Registro</h2>
+        <h2 className="login-titulo">Registro de administrador</h2>
 
         <form className="login-form" onSubmit={handleSubmit}>
           <input
@@ -87,7 +92,7 @@ function Registro1({ cerrarModal, abrirLogin, abrirRegistro2 }) {
             type="text"
             name="username"
             className={`login-input ${errores.username ? "input-error" : ""}`}
-            placeholder="Introducir nombre de ususario"
+            placeholder="Introducir nombre de usuario"
             value={formData.username}
             onChange={handleChange}
           />
@@ -116,18 +121,12 @@ function Registro1({ cerrarModal, abrirLogin, abrirRegistro2 }) {
           )}
 
           <button type="submit" className="login-boton">
-            Continuar con el registro
+            Crear cuenta de administrador
           </button>
         </form>
-
-        <div className="login-links">
-          <button type="button" className="login-link" onClick={abrirLogin}>
-            Log in
-          </button>
-        </div>
       </div>
     </div>
   );
 }
 
-export default Registro1;
+export default RegistroAdmin1;

@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function Login({ cerrarModal, abrirRegistro, abrirOlvidado, abrirAdmin}) {
+function LoginAdmin({ cerrarModal, abrirLogin, abrirOlvidado}) {
 
   const [correo, setCorreo] = useState("");
   const [contrasena, setPassword] = useState("");
   const [errores, setErrores] = useState({});
+  const navigate = useNavigate();
 
   const validar = () => {
     let nuevosErrores = {};
@@ -20,16 +22,25 @@ function Login({ cerrarModal, abrirRegistro, abrirOlvidado, abrirAdmin}) {
     setErrores(nuevosErrores);
 
     return Object.keys(nuevosErrores).length === 0;
+
+    
   };
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (validar()) {
       console.log("Enviar datos al backend");
-      /*Videojuego*/
+      /*Al momento de iniciar sesion, se cierra la ventana emergente y nos vamos a la pagina del Panel */
+      cerrarModal();
+      navigate("/panel");
+
     }
+    
   };
+  
 
 
   return (
@@ -39,10 +50,10 @@ function Login({ cerrarModal, abrirRegistro, abrirOlvidado, abrirAdmin}) {
           <i className="bi bi-x"></i>
         </button>
 
-        <h2 className="login-titulo">Inicio de sesión</h2>
+        <h2 className="login-titulo">Inicio de sesión Administrador</h2>
 
         <form className="login-form" onSubmit={handleSubmit}>
-        
+          
           <input
             type="text"
             className={`login-input ${errores.correo ? "input-error" : ""}`}
@@ -68,30 +79,25 @@ function Login({ cerrarModal, abrirRegistro, abrirOlvidado, abrirAdmin}) {
             <p className="login-error">{errores.password}</p>
           )}
 
-          <button type="submit" className=" login-boton">
+          <button type="submit" className="login-boton">
             Iniciar sesión
           </button>
         </form>
 
         <div className="login-links">
-          <button type="button" className="login-link " onClick={abrirRegistro}>
-            Registrarse
+          <button type="button" className="login-link" onClick={abrirLogin}>
+            Jugador
           </button>
 
-          <button type=" button" className="login-link" onClick={abrirOlvidado}>
+          <button type="button" className="login-link" onClick={abrirOlvidado}>
             Olvidé mi contraseña
           </button>
         </div>
                 
-            <div className = "login-linksolito">
-                <button type="button" className="login-link" onClick={abrirAdmin}> 
-                    Admin
-                </button>
-            </div>
 
       </div>
     </div>
   );
 }
 
-export default Login;
+export default LoginAdmin;

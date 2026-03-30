@@ -370,7 +370,32 @@ html, body {
 }
 
 
-/**/
+.panel-admin-page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  /*Este fondo luego lo cambiamos*/
+  background: #3a4a8a;
+}
+
+.panel-admin-container {
+  position: relative;
+  width: 100%;
+  max-width: 40rem;
+  min-height: 60vh;
+  background: #ffffff;
+  border-radius: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 1rem 1.5rem;
+  box-sizing: border-box;
+  gap: 0.75rem;
+}
 
 
 /*---------------------------------------------------------------------------*/
@@ -383,7 +408,7 @@ html, body {
   }
 
   .tarjeta{
-  min-height: 230px;
+  min-height: 210px;
   }
 
   .textoTJ{
@@ -392,7 +417,7 @@ html, body {
   }
 
   .header.falso{
-    height: 100px;
+    height: 90px;
     justify-content:left;
 
   }

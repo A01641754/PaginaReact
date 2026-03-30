@@ -1,10 +1,9 @@
 import { useState } from "react";
 
-function Registro2({ cerrarRegistro, abrirLogin }) {
+function RegistroAdmin2({ cerrarModal, }) {
   const [formData, setFormData] = useState({
     nombre: "",
     fechaNacimiento: "",
-    esUsuarioNide: false,
     actividadNide: "",
     colonia: "",
     contacto: "",
@@ -13,31 +12,17 @@ function Registro2({ cerrarRegistro, abrirLogin }) {
   const [errores, setErrores] = useState({});
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-
-    const nuevoValor = type === "checkbox" ? checked : value;
+    const { name, value } = e.target;
 
     setFormData((prev) => ({
       ...prev,
-      [name]: nuevoValor,
+      [name]: value,
     }));
 
     setErrores((prev) => ({
       ...prev,
       [name]: "",
     }));
-
-    if (name === "esUsuarioNide" && !checked) {
-      setFormData((prev) => ({
-        ...prev,
-        actividadNide: "",
-      }));
-
-      setErrores((prev) => ({
-        ...prev,
-        actividadNide: "",
-      }));
-    }
   };
 
   const validar = () => {
@@ -51,8 +36,8 @@ function Registro2({ cerrarRegistro, abrirLogin }) {
       nuevosErrores.fechaNacimiento = "La fecha de nacimiento es obligatoria";
     }
 
-    if (formData.esUsuarioNide && !formData.actividadNide.trim()) {
-      nuevosErrores.actividadNide = "Debes escribir tu actividad dentro de NIDE";
+    if (!formData.actividadNide.trim()) {
+      nuevosErrores.actividadNide = "La actividad dentro de NIDE es obligatoria";
     }
 
     if (!formData.colonia.trim()) {
@@ -61,33 +46,38 @@ function Registro2({ cerrarRegistro, abrirLogin }) {
 
     if (!formData.contacto.trim()) {
       nuevosErrores.contacto = "El contacto es obligatorio";
-      /*Esto es para que solo acepte 10 numeros en este apartado */
     } else if (!/^\d{10}$/.test(formData.contacto)) {
-      nuevosErrores.contacto = "El numero debe tener exactamente 10 dígitos";
+      nuevosErrores.contacto = "El número debe tener exactamente 10 dígitos";
     }
 
     setErrores(nuevosErrores);
     return Object.keys(nuevosErrores).length === 0;
   };
 
+
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (validar()) {
-      console.log("Datos completos del registro:", formData);
+      console.log("Datos de RegistroAdmin2 válidos:", formData);
       alert("Cuenta de administrador creada con éxito");
-      cerrarRegistro();
+      cerrarModal();
     }
   };
+
+
+
 
   return (
     <div className="login-overlay">
       <div className="login-modal">
-        <button className="login-cerrar" onClick={cerrarRegistro}>
+        <button className="login-cerrar" onClick={cerrarModal}>
           <i className="bi bi-x"></i>
         </button>
 
-        <h2 className="login-titulo">Completa tu registro</h2>
+        <h2 className="login-titulo">Completa el registro de administrador</h2>
 
         <form className="login-form" onSubmit={handleSubmit}>
           <input
@@ -111,34 +101,16 @@ function Registro2({ cerrarRegistro, abrirLogin }) {
             <p className="login-error">{errores.fechaNacimiento}</p>
           )}
 
-          <label className="registro-switch-container">
-            <span className="registro-switch-texto">Eres usuario de NIDE</span>
-
-            <input
-              type="checkbox"
-              name="esUsuarioNide"
-              checked={formData.esUsuarioNide}
-              onChange={handleChange}
-              className="registro-switch-input"
-            />
-
-            <span className="registro-switch-slider"></span>
-          </label>
-
-          {formData.esUsuarioNide && (
-            <>
-              <input
-                type="text"
-                name="actividadNide"
-                className={`login-input ${errores.actividadNide ? "input-error" : ""}`}
-                placeholder="Qué actividad realizas dentro de NIDE"
-                value={formData.actividadNide}
-                onChange={handleChange}
-              />
-              {errores.actividadNide && (
-                <p className="login-error">{errores.actividadNide}</p>
-              )}
-            </>
+          <input
+            type="text"
+            name="actividadNide"
+            className={`login-input ${errores.actividadNide ? "input-error" : ""}`}
+            placeholder="Que actividad realizas dentro de NIDE"
+            value={formData.actividadNide}
+            onChange={handleChange}
+          />
+          {errores.actividadNide && (
+            <p className="login-error">{errores.actividadNide}</p>
           )}
 
           <input
@@ -168,14 +140,10 @@ function Registro2({ cerrarRegistro, abrirLogin }) {
           </button>
         </form>
 
-        <div className="login-links">
-          <button type="button" className="login-link" onClick={abrirLogin}>
-            Log in
-          </button>
-        </div>
+    
       </div>
     </div>
   );
 }
 
-export default Registro2;
+export default RegistroAdmin2;
