@@ -16,6 +16,12 @@ html, body {
   src: url('/src/tipografias_somnia/Leorio.ttf') format('opentype');
 }
 
+@font-face {
+  font-family: 'LTFunk';
+  src: url('/src/tipografias_somnia/LT\ Funk.otf') format('opentype');
+}
+
+
 
 .fondoMain {
   min-height: 100vh;
@@ -95,17 +101,7 @@ html, body {
   
 }
 
-/*Este header falso1 es para que en las otras paginas no se pongan las letras detras de la navbar*/
-.header.falso1{
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  box-sizing: border-box;
-  height: 85px;
-  z-index: 900;
-  
-}
+
 
 .navbar{
   /*Inicialmente el menu no se ve, hasta que apliquemos el .nav.visible*/
@@ -156,10 +152,11 @@ html, body {
   color: white;
   font-size: 3.7rem;
   text-decoration:none;
-
+  background-size: center;
   
-
 }
+
+
 
 .linktrue{
   font-family: 'Fontlero';
@@ -398,10 +395,359 @@ html, body {
 }
 
 
-/*---------------------------------------------------------------------------*/
+/*Esto es para el dashboard*/
+
+.eliminar-container {
+  max-width: 48rem;
+  min-height: auto;
+  justify-content: flex-start;
+}
+
+.eliminar-titulo {
+  font-family: Fontlero;
+  text-align: center;
+  font-size: 2.2rem;
+  margin: 0 0 1.5rem 0;
+  color: #111;
+}
+
+.eliminar-acciones {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.boton-gris {
+  max-width: 10rem;
+  background: rgb(78, 78, 78);
+  color: white;
+}
+
+.boton-gris:hover {
+  background: rgb(63, 63, 63);
+}
+
+.boton-eliminar {
+  max-width: 10rem;
+  background: rgb(206, 9, 9);
+  color: white;
+}
+
+.boton-eliminar:hover {
+  background: rgb(170, 8, 8);
+}
+
+.tabla-usuarios {
+  width: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: rgb(78, 78, 78);
+  min-height: 16rem;
+}
+
+.tabla-header {
+  background: rgb(110, 110, 110);
+  padding: 0.9rem 1rem;
+}
+
+.tabla-body {
+  padding: 0.6rem 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.fila-usuario {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: Leorio;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.fila-usuario input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  accent-color: rgb(180, 170, 170);
+  flex-shrink: 0;
+}
+
+.sin-usuarios {
+  font-family: Leorio;
+  color: white;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/*Esto es para arreglar el bug de la navbar*/
+
+.page-con-header {
+  padding-top: 85px;
+}
+
+/**/
+.dashboard-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  background: #3a4a8a;
+}
+
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+
+.dashboard-header .login-boton {
+  position: absolute;
+  left: 0;
+}
+
+
+.dashboard-titulo {
+  font-family: Fontlero;
+  font-size: 2.5rem;
+  color: rgb(255, 255, 255);
+}
+
+
+/*----------------------------------HISTORIA-------------------------------------------------------*/
+.somnia-inicio {
+  width: 100%;
+}
+
+.somnia-seccion {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.2rem;
+}
+
+.somnia-game {
+  height: 30vh;
+
+}
+
+.somnia-fondo-inicio,
+.somnia-fondo-personaje,
+.somnia-fondo-modos,
+.somnia-fondo-trailer,
+.somnia-fondo-jugar {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.somnia-fondo-inicio {
+  background-color: #e6e6e6;
+}
+
+.somnia-fondo-personaje {
+  background-color: #e8d3a4;
+}
+
+.somnia-fondo-modos {
+  background-color: #e6e6e6;
+}
+
+.somnia-fondo-trailer {
+  background-color: #e6e6e6;
+}
+
+.somnia-fondo-jugar {
+  background-color: #e6e6e6;
+}
+
+.somnia-contenedor {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.somnia-columna-texto,
+.somnia-columna-imagen {
+  width: 100%;
+}
+
+.somnia-columna-imagen {
+  display: flex;
+  justify-content: center;
+}
+
+.somnia-titulo {
+  font-family: 'LTFunk';
+  font-size: 2.6rem;
+  line-height: 1;
+  margin: 0 0 1.5rem 0;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.somnia-texto {
+  font-family: 'Fontlero';
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #222;
+  max-width: 18rem;
+}
+
+.somnia-marco-imagen {
+  width: 100%;
+  max-width: 16rem;
+  height: 28rem;
+  border: 2px solid #000;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.somnia-imagen-bienvenida {
+  /*
+  background-image: url("");
+  */
+}
+
+.somnia-imagen-personaje {
+  
+}
+
+.somnia-imagen-modos {
+  
+}
+
+.somnia-contenedor-trailer {
+  width: 100%;
+}
+
+.somnia-area-trailer {
+  width: 100%;
+  min-height: 55vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+.somnia-texto-trailer {
+  font-family: 'Leorio';
+  font-size: 1.6rem;
+  color: #555;
+}
+
+.somnia-contenedor-jugar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.somnia-boton-jugar {
+  font-family: 'Leorio';
+  padding: 1rem 2.8rem;
+  font-size: 1.8rem;
+  background-color: #1e1e1e;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.4rem;
+}
+
+
+.somnia-footer {
+  background-color: #000;
+  padding: 2rem 1rem;
+}
+
+.somnia-footer-contenido {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.somnia-footer-texto,
+.somnia-footer-separador {
+  font-family: 'Leorio';
+  font-size: 0.9rem;
+}
+
+/*----------------------------------CREADORES-------------------------------------------------------*/
+.somnia-equipo {
+  width: 100%;
+  padding: 5rem 0rem;
+  background-color: #e6e6e6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.somnia-equipo-titulo {
+  font-family: 'Fontlero';
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.somnia-equipo-grid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.somnia-miembro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.somnia-miembro-foto {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  border: 2px solid #888;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 1rem;
+}
+
+.somnia-miembro-nombre {
+  font-family: 'Fontlero';
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.somnia-miembro-rol {
+  font-family: 'Leorio';
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 @media screen and (min-width: 900px) {
   /*Estas modificaciones son para la versión de pc, son clases pasadas*/
+
+  .page-con-header {
+    padding-top: 90px;
+  }
 
   .abrir-menu,.cerrar-menu{
     display: none;
@@ -449,7 +795,117 @@ html, body {
   padding: 1.2rem 2rem 2rem;
 }
 
+/*---------------HISTORIA PC ---------------------*/
+.somnia-seccion {
+    padding: 3rem 2.5rem;
+}
 
+  .somnia-contenedor {
+    width: 100%;
+    max-width: 1200px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+  }
+
+  .somnia-columna-texto,
+  .somnia-columna-imagen {
+    width: 50%;
+  }
+
+  .somnia-columna-texto,
+  .somnia-columna-imagen {
+    order: unset;
+  }
+
+  .somnia-columna-imagen {
+    justify-content: center;
+  }
+
+  .somnia-titulo {
+    font-size: 4rem;
+    max-width: 28rem;
+  }
+
+  .somnia-texto {
+    font-size: 1.5rem;
+    max-width: 28rem;
+    line-height: 1.5;
+  }
+
+  .somnia-marco-imagen {
+    max-width: 24rem;
+    height: 34rem;
+  }
+
+  .somnia-contenedor-trailer {
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .somnia-area-trailer {
+    min-height: 65vh;
+  }
+
+  .somnia-texto-trailer {
+    font-size: 2.2rem;
+  }
+
+  .somnia-boton-jugar {
+    padding: 1.1rem 4rem;
+    font-size: 1.2rem;
+  }
+
+  .somnia-footer {
+    padding: 2rem 0;
+  }
+
+  .somnia-footer-contenido {
+    gap: 1.5rem;
+  }
+
+  .somnia-footer-texto,
+  .somnia-footer-separador {
+    font-size: 1rem;
+  }
+
+/*---------------CREADORES PC ---------------------*/
+
+
+  .somnia-equipo {
+    padding: 4rem 2rem;
+  }
+
+  .somnia-equipo-titulo {
+    font-size: 3.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .somnia-equipo-grid {
+    max-width: 1100px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3.5rem 6rem;
+  }
+
+  .somnia-miembro {
+    width: 180px;
+  }
+
+  .somnia-miembro-foto {
+    width: 9rem;
+    height: 9rem;
+  }
+
+  .somnia-miembro-nombre {
+    font-size: 1.3rem;
+  }
+
+  .somnia-miembro-rol {
+    font-size: 1rem;
+  }
 
 /*-------------------------------------------------------*/
 /*Clases nuevas de la versión de PC*/
@@ -467,8 +923,8 @@ html, body {
   z-index: 1;
   pointer-events: none;
 
-  background-size: contain;
-  background-position: 85% bottom;
+  background-size: 17%;
+  background-position: 89% 15%;
   background-repeat: no-repeat;
 
   opacity: 0;

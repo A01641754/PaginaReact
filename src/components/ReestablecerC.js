@@ -30,8 +30,8 @@ function RestablecerC({ cerrarModal, abrirLogin }) {
       return;
     }
 
-    if (nuevaPassword.length < 4) {
-      setError("La contraseña debe tener al menos 4 caracteres");
+    if (nuevaPassword.length < 8) {
+      setError("La contraseña debe tener al menos 8 caracteres");
       return;
     }
 

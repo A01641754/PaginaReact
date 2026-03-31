@@ -7,30 +7,30 @@ function Tarjetas({ tipo, abrirLogin }) {
     1: {
       titulo: "Ir a Somnia",
       imagenB: "/imagenes/inicio.jpg",
-      imagenH: "/imagenes/bolillo.png",
+      imagenH: "/imagenes/Protav2.png",
     },
     2: {
       titulo: "Descubre más de Somnia",
       imagenB: "/imagenes/descubre.jpg",
-      imagenH: "/imagenes/bolillo.png",
+      imagenH: "/imagenes/Zuri.png",
       link: "/historia"
     },
     3: {
       titulo: "Islas",
       imagenB: "/imagenes/islas.png",
-      imagenH: "/imagenes/bolillo.png",
+      imagenH: "/imagenes/Lynett.png",
       link: "/islas"
     },
     4: {
       titulo: "Personajes",
       imagenB: "/imagenes/personajes.png",
-      imagenH: "/imagenes/bolillo.png",
+      imagenH: "/imagenes/Circe.png",
       link: "/personajes"
     },
     5: {
       titulo: "Creadores",
       imagenB: "/imagenes/creadores.png",
-      imagenH: "/imagenes/bolillo.png",
+      imagenH: "/imagenes/Barbatos.png",
       link: "/creadores"
     }
   };

@@ -8,6 +8,10 @@ import Creadores from "./pages/Creadores";
 import Historia from "./pages/Historia";
 import PanelAdmin from "./pages/PanelAdmin";
 import RegistroAdmin1 from "./components/RegistroAdmin1"
+import Dashboard from "./components/Dashboard"
+import EliminarC from "./components/EliminarC"
+import Personajes from "./pages/Personajes"
+import Islas from "./pages/Islas"
 
 
 function App() {
@@ -18,8 +22,12 @@ function App() {
         <Route index element={<Home />} />
         <Route path="creadores" element={<Creadores />} />
         <Route path="historia" element={<Historia />} />
+        <Route path="islas" element={<Islas />} />
+        <Route path="personajes" element={<Personajes />} />
         <Route path="panel" element={<PanelAdmin />} />
         <Route path="registroA1" element={<RegistroAdmin1/>}/>
+        <Route path="eliminarU" element={<EliminarC />} />\
+        <Route path="dashboard" element={<Dashboard />} />
 
       </Route>
     </Routes>

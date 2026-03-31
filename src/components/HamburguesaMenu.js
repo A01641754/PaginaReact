@@ -57,9 +57,12 @@ function HamburguesaMenu() {
   return (
     <>
       <header className="header falso">
+        <div className="contenedorLogo">
         <Link className="Logo" to="/" onClick={() => setMenuAbierto(false)}>
-          <p>Somnia</p>
+          Somnia
         </Link>
+
+        </div>
 
         <Navlinks.B abrirLogin={abrirLogin} />
 

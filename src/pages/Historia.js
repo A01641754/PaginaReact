@@ -1,80 +1,82 @@
+import { useOutletContext } from "react-router-dom";
+
 function Historia() {
+  const { abrirLogin } = useOutletContext();
   return (
-    <>
-    <header className = "header falso1"></header>
-      <main className="contenedor-principal">
-        <section className="fila-alterna">
-          <div className="bloque-texto">
-            <h1 className="titulo-destacado">BIENVENIDOS A<br />SOMNIA</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.
-              Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus
-              rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna
-              non est bibendum non venenatis nisl tempor.
+    <main className="page-con-header somnia-inicio">
+      <section className="somnia-seccion somnia-fondo-inicio">
+        <div className="somnia-contenedor">
+          <div className="somnia-columna-texto">
+            <h1 className="somnia-titulo">BIENVENIDOS A SOMNIA</h1>
+            <p className="somnia-texto">
+              Somnia es un viaje interactivo por un mundo de sueños donde el jugador
+              explora, aprende y descubre sus emociones mientras avanza en la historia.
             </p>
           </div>
 
-          <div className="bloque-visual">
-            <div className="placeholder-carrusel">
-              <p>Imágenes del videojuego, van a estar en cambio</p>
-            </div>
+          <div className="somnia-columna-imagen">
+            <div className="somnia-marco-imagen somnia-imagen-bienvenida"></div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="fila-alterna reversa">
-          <div className="bloque-visual">
-            <div className="placeholder-carrusel">
-              <p>Imagen del UI de personalización del personaje</p>
-            </div>
+      <section className="somnia-seccion somnia-fondo-personaje">
+        <div className="somnia-contenedor">
+          <div className="somnia-columna-imagen">
+            <div className="somnia-marco-imagen somnia-imagen-personaje"></div>
           </div>
 
-          <div className="bloque-texto">
-            <h2 className="titulo-destacado">PERSONALIZA<br />TU PERSONAJE</h2>
-            <p>
-              Curabitur vulputate, ligula lacinia scelerisque tempor, elit lectus elementum
-              nunc, nec condimentum sem tellus ac quam. Quisque pretium sagittis ex, ac tempor
-              ipsum facilisis eget. Fusce dignissim sit amet turpis non pellentesque. Nulla
-              facilisi. Proin id viverra magna.
+          <div className="somnia-columna-texto">
+            <h2 className="somnia-titulo">PERSONALIZA TU PERSONAJE</h2>
+            <p className="somnia-texto">
+              En la tienda a través de las monedas que vayas consiguiendo en los niveles
+              vas a poder comprar diferentes colores de piel, rostros y asombrosos
+              atuendos. Podrás conseguirlos todos.
             </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="fila-alterna">
-          <div className="bloque-texto">
-            <h2 className="titulo-destacado">VARIOS MODOS<br />DE JUEGO</h2>
-            <p>
-              Aenean faucibus euismod lorem, id iaculis tellus pellentesque in. Suspendisse
-              pulvinar, ex efficitur commodo consequat, odio lectus tristique arcu, ac
-              ullamcorper nisi lorem at metus. Sed at risus a urna lacinia iaculis in rutrum
-              erat. Praesent vitae sodales mauris, in accumsan mi.
+      <section className="somnia-seccion somnia-fondo-modos">
+        <div className="somnia-contenedor">
+          <div className="somnia-columna-texto">
+            <h2 className="somnia-titulo">VARIOS MODOS DE JUEGO</h2>
+            <p className="somnia-texto">
+              Somnia cuenta con dos mecánicas principales. Los niveles de acción rápida
+              están enfocados en matemáticas y razonamiento matemático. Por otra parte,
+              están los niveles de plataforma narrativa para reforzar gramática e
+              identificar emociones.
             </p>
           </div>
 
-          <div className="bloque-visual">
-            <div className="placeholder-carrusel">
-              <p>
-                Imágenes del nivel de matemáticas, razonamiento matemático, plataformas y
-                diálogo, van a estar cambiando entre ellas
-              </p>
-            </div>
+          <div className="somnia-columna-imagen">
+            <div className="somnia-marco-imagen somnia-imagen-modos"></div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="seccion-trailer">
-          <div className="placeholder-video">
-            <p>Trailer del videojuego</p>
+      <section className="somnia-seccion somnia-fondo-trailer">
+        <div className="somnia-contenedor-trailer">
+          <div className="somnia-area-trailer">
+            <p className="somnia-texto-trailer">Próximo trailer del videojuego</p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="seccion-cta">
-          <button className="btn-jugar">Jugar gratis</button>
-        </section>
-      </main>
+      <section className="somnia-game somnia-fondo-jugar">
+        <div className="somnia-contenedor-jugar">
+          <button className="somnia-boton-jugar">Jugar gratis</button>
+        </div>
+      </section>
 
-      <footer className="footer-alianza">
-        <p>NIDE &nbsp;&nbsp;&nbsp; Y &nbsp;&nbsp;&nbsp; Tecnológico de Monterrey</p>
+      <footer className="somnia-footer">
+        <div className="somnia-footer-contenido">
+          <span className="somnia-footer-texto">NIDE</span>
+          <span className="somnia-footer-separador">x</span>
+          <span className="somnia-footer-texto">Tecnológico de Monterrey</span>
+        </div>
       </footer>
-    </>
+    </main>
   );
 }
 

@@ -1,56 +1,75 @@
 
 
-function EquipoDesarrollo() {
+function Creadores() {
   return (
     <>
-    <header className = "header falso1"></header>
-      <main className="contenedor-creadores">
-        <h1 className="titulo-equipo">Equipo de Desarrollo</h1>
+      <section className="somnia-equipo page-con-header">
+        <h2 className="somnia-equipo-titulo">
+          Equipo de Desarrollo
+        </h2>
 
-        <div className="cuadricula-equipo">
-          <article className="tarjeta-creador">
-            <div className="foto-creador">Foto</div>
-            <h2 className="nombre-creador">Nombre</h2>
-            <p className="rol-creador">Rol</p>
-          </article>
+        <div className="somnia-equipo-grid">
 
-          <article className="tarjeta-creador">
-            <div className="foto-creador">Foto</div>
-            <h2 className="nombre-creador">Nombre</h2>
-            <p className="rol-creador">Rol</p>
-          </article>
+          <div className="somnia-miembro">
+            <div className="somnia-miembro-foto foto-said"></div>
+            <p className="somnia-miembro-nombre">Said</p>
+            <p className="somnia-miembro-rol">
+              Líder Técnico<br />Programador
+            </p>
+          </div>
 
-          <article className="tarjeta-creador">
-            <div className="foto-creador">Foto</div>
-            <h2 className="nombre-creador">Nombre</h2>
-            <p className="rol-creador">Rol</p>
-          </article>
+          <div className="somnia-miembro">
+            <div className="somnia-miembro-foto foto-adrik"></div>
+            <p className="somnia-miembro-nombre">Adrik</p>
+            <p className="somnia-miembro-rol">
+              Game Designer<br />Animador
+            </p>
+          </div>
 
-          <article className="tarjeta-creador">
-            <div className="foto-creador">Foto</div>
-            <h2 className="nombre-creador">Nombre</h2>
-            <p className="rol-creador">Rol</p>
-          </article>
+          <div className="somnia-miembro">
+            <div className="somnia-miembro-foto foto-lore"></div>
+            <p className="somnia-miembro-nombre">Lore</p>
+            <p className="somnia-miembro-rol">
+              Base de datos<br />Programadora
+            </p>
+          </div>
 
-          <article className="tarjeta-creador">
-            <div className="foto-creador">Foto</div>
-            <h2 className="nombre-creador">Nombre</h2>
-            <p className="rol-creador">Rol</p>
-          </article>
+          <div className="somnia-miembro">
+            <div className="somnia-miembro-foto foto-lian"></div>
+            <p className="somnia-miembro-nombre">Lian</p>
+            <p className="somnia-miembro-rol">
+              Página web<br />Programador
+            </p>
+          </div>
 
-          <article className="tarjeta-creador">
-            <div className="foto-creador">Foto</div>
-            <h2 className="nombre-creador">Nombre</h2>
-            <p className="rol-creador">Rol</p>
-          </article>
+          <div className="somnia-miembro">
+            <div className="somnia-miembro-foto foto-lalo"></div>
+            <p className="somnia-miembro-nombre">Lalo</p>
+            <p className="somnia-miembro-rol">
+              Página web<br />Programador
+            </p>
+          </div>
+
+          <div className="somnia-miembro">
+            <div className="somnia-miembro-foto foto-marco"></div>
+            <p className="somnia-miembro-nombre">Marco</p>
+            <p className="somnia-miembro-rol">
+              Base de datos<br />Programador
+            </p>
+          </div>
+
         </div>
-      </main>
-
-      <footer className="footer-alianza">
-        <p>NIDE &nbsp;&nbsp;&nbsp; Y &nbsp;&nbsp;&nbsp; Tecnológico de Monterrey</p>
+      </section>
+      
+      <footer className="somnia-footer">
+        <div className="somnia-footer-contenido">
+          <span className="somnia-footer-texto">NIDE</span>
+          <span className="somnia-footer-separador">x</span>
+          <span className="somnia-footer-texto">Tecnológico de Monterrey</span>
+        </div>
       </footer>
     </>
   );
 }
 
-export default EquipoDesarrollo;
+export default Creadores;
