@@ -65,7 +65,9 @@ function Historia() {
 
       <section className="somnia-game somnia-fondo-jugar">
         <div className="somnia-contenedor-jugar">
-          <button className="somnia-boton-jugar">Jugar gratis</button>
+          <button className="somnia-boton-jugar"
+          Onclick={abrirLogin}>
+            Jugar gratis</button>
         </div>
       </section>
 
