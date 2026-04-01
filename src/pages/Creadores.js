@@ -28,7 +28,7 @@ function Creadores() {
 
           <div className="somnia-miembro">
             <div className="somnia-miembro-foto foto-lore"></div>
-            <p className="somnia-miembro-nombre">Lore</p>
+            <p className="somnia-miembro-nombre">Lorena</p>
             <p className="somnia-miembro-rol">
               Base de datos<br />Programadora
             </p>
@@ -44,7 +44,7 @@ function Creadores() {
 
           <div className="somnia-miembro">
             <div className="somnia-miembro-foto foto-lalo"></div>
-            <p className="somnia-miembro-nombre">Lalo</p>
+            <p className="somnia-miembro-nombre">Eduardo</p>
             <p className="somnia-miembro-rol">
               Página web<br />Programador
             </p>
