@@ -1,7 +1,7 @@
 function Islas() {
   return (
     <>
-      <section className="islas-seccion isla-fondo1">
+      <section className="islas-seccion isla-fondo1 page-con-header">
         <div className="islas-capa-oscura"></div>
 
         <div className="islas-contenido">

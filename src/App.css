@@ -486,11 +486,9 @@ html, body {
   margin-top: 2rem;
 }
 
-/*Esto es para arreglar el bug de la navbar*/
 
-.page-con-header {
-  padding-top: 85px;
-}
+
+
 
 /**/
 .dashboard-page {
@@ -551,17 +549,6 @@ html, body {
   background-size: cover;
 }
 
-.somnia-fondo-inicio {
-  background-color: #e6e6e6;
-}
-
-.somnia-fondo-personaje {
-  background-color: #e8d3a4;
-}
-
-.somnia-fondo-modos {
-  background-color: #e6e6e6;
-}
 
 .somnia-fondo-trailer {
   background-color: #e6e6e6;
@@ -593,7 +580,7 @@ html, body {
   font-size: 2.6rem;
   line-height: 1;
   margin: 0 0 1.5rem 0;
-  color: #000;
+  color: #ffffff;
   text-transform: uppercase;
 }
 
@@ -601,7 +588,7 @@ html, body {
   font-family: 'Fontlero';
   font-size: 1rem;
   line-height: 1.7;
-  color: #222;
+  color: #ffffff;
   max-width: 18rem;
 }
 
@@ -614,24 +601,24 @@ html, body {
   background-size: cover;
 }
 
-.somnia-imagen-bienvenida {
-  /*
-  background-image: url("");
-  */
-}
-
-.somnia-imagen-personaje {
-  /*
-  background-image: url("");
-  */
+.somnia-fondo-inicio {
+  
+  background-image: url("../public/imagenes/fog1.png");
   
 }
 
-.somnia-imagen-modos {
+.somnia-fondo-personaje {
+  
+  background-image: url("../public/imagenes/fog2.png");
+  
+  
+}
 
-  /*
-  background-image: url("");
-  */
+.somnia-fondo-modos {
+
+  
+  background-image: url("../public/imagenes/fog3.png");
+  
 }
 
 .somnia-contenedor-trailer {
@@ -1074,6 +1061,11 @@ html, body {
 
 .somnia-carrusel-imagen.activa {
   opacity: 1;
+}
+
+/*Esto es para arreglar el bug de la navbar*/
+.page-con-header {
+  padding-top: 85px;
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------*/

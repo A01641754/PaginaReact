@@ -4,10 +4,10 @@ import { useOutletContext } from "react-router-dom";
 function Historia() {
   const { abrirLogin } = useOutletContext();
 
-  
-  const imagenes1 = ["", "/historia2.jpg", "/historia3.jpg"];
+  /*El imagenes1 queda pendiente, adrik aún no tiene las imagenes, tons, equisde */
+  const imagenes1 = [""];
   const imagenes2 = ["/imagenes/colores.png", "/imagenes/Personaje2.png", "/imagenes/Personaje1.png", "/imagenes/Personaje3.png"];
-  const imagenes3 = ["/modos1.jpg", "/modos2.jpg", "/modos3.jpg"];
+  const imagenes3 = ["/imagenes/juegoMat.png"];
 
   // ESTADOS
   const [i1, setI1] = useState(0);
@@ -37,10 +37,10 @@ function Historia() {
   }, []);
 
   return (
-    <main className="page-con-header somnia-inicio">
+    <main className="somnia-inicio ">
 
       {/* 🔹 SECCIÓN 1 */}
-      <section className="somnia-seccion somnia-fondo-inicio">
+      <section className="somnia-seccion somnia-fondo-inicio page-con-header">
         <div className="somnia-contenedor">
           <div className="somnia-columna-texto">
             <h1 className="somnia-titulo">BIENVENIDOS A SOMNIA</h1>
@@ -117,6 +117,23 @@ function Historia() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="somnia-seccion somnia-fondo-trailer">
+        <div className="somnia-contenedor-trailer">
+          <div className="somnia-area-trailer">
+            <p className="somnia-texto-trailer">Próximo trailer del videojuego</p>
+          </div>
+        </div>
+      </section>
+
+
+      <section className="somnia-game somnia-fondo-jugar">
+        <div className="somnia-contenedor-jugar">
+          <button className="somnia-boton-jugar"
+          onClick={abrirLogin}>
+            Jugar gratis</button>
         </div>
       </section>
       
